@@ -1,0 +1,33 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %}Inscrivez-vous pour créer votre  boutique en ligne
+{% endblock %}
+
+{% block body %}
+
+	<div class="container mt-5 border border-success bg-light rounded p-2 clearfix" id="register">
+		<div class="bg-light p-3">
+			<h3 class="text-center">Inscrivez-vous pour créer votre  espace auto ecole en ligne
+			</h3>
+		</div>
+		{{ form_start(registrationForm) }}
+		<div class="row">
+			<div class="col-6">
+				{{ form_label(registrationForm, 'Prénom')}}
+				{{ form_widget(registrationForm.firstName, {'attr' : {'class' : 'form-control'}}) }}
+			</div>
+			<div class="col-6">
+				{{ form_label(registrationForm, 'Nom')}}
+				{{ form_widget(registrationForm.lastName, {label: 'Nom','attr' : {'class' : 'form-control'}}) }}
+			</div>
+		</div>
+		{{ form_row(registrationForm.email, {label: 'Email','attr' : {'class' : 'form-control'}}) }}
+		{{ form_row(registrationForm.phone, {label: 'Téléphone','attr' : {'class' : 'form-control'}}) }}
+		{{ form_row(registrationForm.role, {label: 'Role','attr' : {'class' : 'form-control'}}) }}
+		{{ form_row(registrationForm.plainPassword, {label: 'Mot de pass','attr' : {'class' : 'form-control mb-2'}}) }}
+
+		<button type="submit" class="btn btn-primary">Inscrivez-vous</button>
+		{{ form_end(registrationForm) }}
+		<div class="text-primary mt-2">
+			<a href={{ path("app_login") }}>Vous avez un compte ? Connectez-vous</a>
+		</div>
+	{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %}Identifiez-vous pour accèder à votre  boutique en ligne
+{% endblock %}
+
+{% block body %}
+
+	<div class="container mt-5 border border-success bg-light rounded p-2 clearfix" id="login">
+		<div class="bg-light p-3">
+			<h3 class="text-center">Identifiez-vous pour accèder à votre  auto ecole en ligne
+			</h3>
+		</div>
+		{% if error %}
+			<div class="bg-danger">{{ error.messageKey|trans(error.messageData, 'security') }}
+			</div>
+		{% endif %}
+
+		<form action="{{ path('app_login') }}" method="post">
+			<label for="username">Email:</label>
+			<input type="text" id="username" name="_username" class="form-control" placeholder="Email" value="{{ last_username }}"/>
+
+			<label for="password">Mot de pass:</label>
+			<input type="password" id="password" name="_password" class="form-control" placeholder="Mot de pass"/>
+
+
+			<button type="submit" class="btn btn-success-p mt-3">Connexion</button>
+
+			<div class="text-primary mt-2">
+				<a href={{path("app_register")}}>
+					Vous avez pas un compte ? Créer le</a>
+			</div>
+		</form>
+	</div>
+{% endblock %}
