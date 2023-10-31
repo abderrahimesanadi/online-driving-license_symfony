@@ -63,6 +63,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $reservations;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_instructor;
+
     public function __construct()
     {
         $this->instructor = new ArrayCollection();
@@ -251,6 +256,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $reservation->setInstructor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isIsInstructor(): ?bool
+    {
+        return $this->is_instructor;
+    }
+
+    public function setIsInstructor(bool $is_instructor): self
+    {
+        $this->is_instructor = $is_instructor;
 
         return $this;
     }

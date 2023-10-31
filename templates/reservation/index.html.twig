@@ -1,0 +1,21 @@
+{% extends 'admin_connected_base.html.twig' %}
+{% block title %}effectuer votre reservation en ligne
+{% endblock %}
+
+{% block body %}
+
+	<div class="container mt-5 border border-success bg-light rounded p-2 clearfix" id="register">
+		<div class="bg-light p-3">
+			<h3 class="text-center">effectuer votre reservation en ligne
+			</h3>
+		</div>
+		{{ form_start(form) }}
+		{{ form_row(form.res_datetime, {label: 'Date et heure de reservation','attr' : {'class' : 'form-control'}}) }}
+		<br/>
+		<div class="row" style="margin-left:auto">
+			{{ form_row(form.instructor, {label: 'Instructeur','attr' : {'class' : 'form-control'}}) }}
+		</div>
+		<br/>
+		<button type="submit" class="btn btn-primary">Reserver</button>
+		{{ form_end(form) }}
+	{% endblock %}

@@ -32,6 +32,11 @@ class SecurityController extends AbstractController
                 )
             );
             $user->setRoles([$form->get('role')->getData()]);
+            if ($form->get('role')->getData() == "ROLE_INSTRUCTOR") {
+                $user->setIsInstructor(1);
+            } else {
+                $user->setIsInstructor(0);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

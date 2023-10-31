@@ -7,23 +7,17 @@
 			{% endblock %}
 		</title>
 		{% block stylesheets %}
-			<link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
-			<link
-			href="{{ asset('css/bootstrap-pulse.min') }}" rel="stylesheet" type="text/css">
-
-			<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-																																																															            -->
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+			-->
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 
 			<!-- Custom fonts for this template-->
-			<link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 			<link
-			href="{{ asset('fonts/Shrikhand-Regular.ttf')}}" rel="stylesheet">
-
+			href="/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 			<!-- Custom styles for this template-->
-			<link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+			<link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 		{% endblock %}
 	</head>
@@ -43,7 +37,7 @@
 				class="navbar-nav bg-danger sidebar sidebar-dark accordion p-2" id="accordionSidebar">
 
 				<!-- Sidebar - Brand -->
-				<a class="navbar-brand text-success-p font-weight-bold active bg-light rounded p-2" href="/admin">
+				<a class="navbar-brand text-success-p font-weight-bold active bg-light rounded p-2" href="/">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewbox="0 0 16 16">
 						<path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"></path>
 					</svg>
@@ -58,16 +52,23 @@
 							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 								<div class="bg-white py-2 collapse-inner rounded">
 									<h6 class="collapse-header">
-										<a class="collapse-item" href="{{ path('admin_categories') }}">Historique de mes reservation</a>
+										<a class="collapse-item" href="#"></a>
 									</h6>
 								</div>
 							</div>
 						</li>
 
+
 						<!-- Divider -->
 						<hr
 						class="sidebar-divider d-none d-md-block">
-
+						<!-- Nav Item - Tables -->
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<i class="fas fa-fw fa-table"></i>
+								<span>Historique de mes reservations</span>
+							</a>
+						</li>
 						<!-- Sidebar Toggler (Sidebar) -->
 						<div class="text-center d-none d-md-inline">
 							<button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -92,13 +93,39 @@
 								<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
 									<i class="fa fa-bars"></i>
 								</button>
+								<div class="collapse navbar-collapse" id="navbarColor03">
+									<ul class="navbar-nav mr-auto">
+										<li class="nav-item active">
+											<a class="nav-link font-weight-bold text-black" href="#">
+												C'est quoi Auto-cole.com ?
+											</a>
+										</li>
+
+										<li class="nav-item active">
+											<a class="nav-link font-weight-bold text-black" href="#">
+												Réussir votre permis
+											</a>
+										</li>
+
+										<li class="nav-item active">
+											<a class="nav-link font-weight-bold text-black" href="#">Conditions d'utilisation
+											</a>
+										</li>
+										<li class="nav-item active">
+											<a class="nav-link font-weight-bold text-black" href="#">Questions frequentes
+											</a>
+										</li>
+									</li>
+
+								</ul>
+
 								<div class="topbar-divider d-none d-sm-block"></div>
 
 								<!-- Nav Item - User Information -->
 								<li class="nav-item dropdown no-arrow">
 									<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										<span class="mr-2 d-none d-lg-inline text-white font-weight-bold small">Abderrahime SANADI</span>
-										<img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
+										<img class="img-profile rounded-circle" src="img/undraw_profile.svg">
 									</a>
 									<!-- Dropdown - User Information -->
 									<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -132,12 +159,8 @@
 								<div class="col-lg-12"> {% block body %}{% endblock %}
 									</div>
 								</div>
-								{% block footer %}
-									{{ include("footer.html.twig") }}
-								{% endblock %}
-
 								{% block javascripts %}
-									<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+									<script type="text/javascript" src="js/app.js"></script>
 								{% endblock %}
 							</div>
 						</body>
