@@ -19,20 +19,20 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for order in orders %}
+				{% for reservation in reservations %}
 					<tr>
-						<td colspan="2">{{order.product.title }}</td>
-						<td>{{order.adresse }}</td>
-						<td colspan="2">{{order.user.firstName}}
+						<td colspan="2">{{reservation.res_datetime|date("m/d/Y") }}</td>
+						<td>{{reservation.res_datetime|date("h:i") }}</td>
+						<td colspan="2">{{reservation.user.firstName}}
 							~
-							{{order.user.lastName}}</td>
+							{{reservation.user.lastName}}</td>
 						<td>en attente</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
 		<div class="navigation">
-			{{ knp_pagination_render(orders) }}
+			{{ knp_pagination_render(reservations) }}
 		</div>
 
 	</div>

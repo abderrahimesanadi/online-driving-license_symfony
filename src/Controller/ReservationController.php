@@ -9,6 +9,7 @@ use App\Entity\Reservation;
 use App\Form\ReservationType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
+use app\Repository\ReservationRepository;
 
 class ReservationController extends AbstractController
 {
@@ -36,6 +37,17 @@ class ReservationController extends AbstractController
 
         return $this->render('reservation/index.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/histo_reservations", name="histo_reservations")
+     */
+    public function list(ReservationRepository $reservationRepository): Response
+    {
+        $reservations = $reservationRepository->findtheLatestReservations();
+        return $this->render('reservation/list.html.twig', [
+            'reservations' => $reservations,
         ]);
     }
 }
