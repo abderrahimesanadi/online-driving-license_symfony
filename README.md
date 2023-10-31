@@ -1,4 +1,4 @@
-Pour installer le projet veuillez suivre les instreuctions ci-dessous :
+Pour installer le projet veuillez suivre les instructions ci-dessous :
 
 git clone https-git repertoire-du-projet
 
