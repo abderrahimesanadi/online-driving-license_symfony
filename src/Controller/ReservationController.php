@@ -9,10 +9,18 @@ use App\Entity\Reservation;
 use App\Form\ReservationType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
-use app\Repository\ReservationRepository;
+use App\Repository\ReservationRepository;
 
 class ReservationController extends AbstractController
 {
+
+    /**
+     * @Route("/", name="app_home")
+     */
+    public function index(): Response
+    {
+        return $this->redirectToRoute('app_login');
+    }
     /**
      * @Route("/reservation", name="app_reservation")
      */
@@ -32,7 +40,7 @@ class ReservationController extends AbstractController
                 'notice',
                 'Réservation crée avec succes!'
             );
-            //return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('app_checkout');
         }
 
         return $this->render('reservation/index.html.twig', [

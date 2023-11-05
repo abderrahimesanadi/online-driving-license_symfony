@@ -64,6 +64,12 @@
 						class="sidebar-divider d-none d-md-block">
 						<!-- Nav Item - Tables -->
 						<li class="nav-item">
+							<a class="nav-link" href="{{path('app_reservation')}}">
+								<i class="fas fa-fw fa-table"></i>
+								<span>Effectuer une nouvelle reservation</span>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="{{path('histo_reservations')}}">
 								<i class="fas fa-fw fa-table"></i>
 								<span>Historique de mes reservations</span>
@@ -159,9 +165,7 @@
 								<div class="col-lg-12"> {% block body %}{% endblock %}
 									</div>
 								</div>
-								{% block javascripts %}
-									<script type="text/javascript" src="js/app.js"></script>
-								{% endblock %}
+								{% block javascripts %}{% endblock %}
 							</div>
 						</body>
 					</body>

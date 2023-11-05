@@ -12,7 +12,7 @@
 		<table class="table table-striped" style="color: #1d1e20;">
 			<thead>
 				<tr>
-					<th scope="col" colspan="3">date de reservation</th>
+					<th scope="col">date de reservation</th>
 					<th scope="col">Heure de reservation</th>
 					<th scope="col">Instructeur</th>
 					<th scope="col">Status</th>
@@ -21,19 +21,15 @@
 			<tbody>
 				{% for reservation in reservations %}
 					<tr>
-						<td colspan="2">{{reservation.res_datetime|date("m/d/Y") }}</td>
-						<td>{{reservation.res_datetime|date("h:i") }}</td>
-						<td colspan="2">{{reservation.user.firstName}}
+						<td>{{reservation.resDatetime|date("m/d/Y") }}</td>
+						<td>{{reservation.resDatetime|date("h:i") }}</td>
+						<td>{{reservation.instructor.firstName}}
 							~
-							{{reservation.user.lastName}}</td>
+							{{reservation.instructor.lastName}}</td>
 						<td>en attente</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
-		<div class="navigation">
-			{{ knp_pagination_render(reservations) }}
-		</div>
-
 	</div>
 {% endblock %}

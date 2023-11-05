@@ -1,0 +1,31 @@
+{% extends 'admin_connected_base.html.twig' %}
+
+{% block title %}Payer avec paypal
+{% endblock %}
+
+{% block body %}
+
+	{# checkout and payment section #}
+	<section>
+		<div class="display-3">
+			<div class="row">
+				<span class="font-weight-bold">Total:</span>
+				<span class="font-weight-bold" style="color:green">$50.6</span>
+			</div>
+			<div class="row mt-4">
+
+				<form action="{{path('app_payment')}}" method="post">
+
+					<input type="hidden" name="token" value="{{csrf_token('paymentform')}}">
+
+					<input type="hidden" name="amount" value="50.6">
+
+					<button class="btn btn-primary">
+						<span style="font-weight:800; font-size:x-large">Payer avec paypal</span>
+					</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

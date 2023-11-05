@@ -20,7 +20,7 @@ class Reservation
     /**
      * @ORM\Column(type="datetime")
      */
-    private $res_datetime;
+    private $resDateTime;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="instructor")
@@ -39,12 +39,12 @@ class Reservation
 
     public function getResDatetime(): ?\DateTimeInterface
     {
-        return $this->res_datetime;
+        return $this->resDateTime;
     }
 
-    public function setResDatetime(\DateTimeInterface $res_datetime): self
+    public function setResDatetime(\DateTimeInterface $resDateTime): self
     {
-        $this->res_datetime = $res_datetime;
+        $this->resDateTime = $resDateTime;
 
         return $this;
     }
