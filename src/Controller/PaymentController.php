@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Omnipay\Omnipay;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Payment;
 
 class PaymentController extends AbstractController
 {
@@ -107,14 +108,14 @@ class PaymentController extends AbstractController
                 $this->manager->flush();
 
                 return $this->render(
-                    'paiment/success.html.twig',
+                    'payment/success.html.twig',
                     [
                         'message' => 'Votre paiement a été un succès, voici l\'id de votre transaction:' . $data['id']
                     ]
                 );
             } else {
                 return $this->render(
-                    'paiment/success.html.twig',
+                    'payment/success.html.twig',
                     [
                         'message' => 'Le paiement a échoué !'
                     ]
@@ -122,7 +123,7 @@ class PaymentController extends AbstractController
             }
         } else {
             return $this->render(
-                'paiment/success.html.twig',
+                'payment/success.html.twig',
                 [
                     'message' => 'l\'utilisateur a annulé son paiement'
                 ]
@@ -139,7 +140,7 @@ class PaymentController extends AbstractController
     public function error(): Response
     {
         return $this->render(
-            'paiment/success.html.twig',
+            'payment/error.html.twig',
             [
                 'message' => 'le paiement a échoué'
             ]

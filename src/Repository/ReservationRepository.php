@@ -16,9 +16,11 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ReservationRepository extends ServiceEntityRepository
 {
-    public function findtheLatestReservations()
+    public function findtheLatestReservations($user_id)
     {
         return $this->createQueryBuilder('r')
+            ->where('r.etudiant = :e')
+            ->setParameter('e', $user_id)
             ->orderBy('r.id', 'DESC')
             ->getQuery()->getResult();
     }

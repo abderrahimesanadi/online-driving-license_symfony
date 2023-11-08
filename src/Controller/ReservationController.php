@@ -53,7 +53,8 @@ class ReservationController extends AbstractController
      */
     public function list(ReservationRepository $reservationRepository): Response
     {
-        $reservations = $reservationRepository->findtheLatestReservations();
+        $user_id = $this->getUser()->getId();
+        $reservations = $reservationRepository->findtheLatestReservations($user_id);
         return $this->render('reservation/list.html.twig', [
             'reservations' => $reservations,
         ]);
